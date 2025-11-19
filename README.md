@@ -12,6 +12,10 @@ Some sections may be incomplete or subject to change.
 The **Device Pulse Table Card** is a custom Lovelace card designed to work with the [Device Pulse](https://github.com/studiobts/home-assistant-device-pulse) integration.
 It provides a table view of devices monitored through the integration.
 
+<p float="left">
+  <img src="images/table.png" width="100%"/>
+</p>
+
 ---
 
 ## Features
