@@ -137,8 +137,6 @@ class DevicePulseTableCard extends LitElement {
             if (result && result.devices) {
                 this._initialized = true;
                 this._devices = result.devices;
-
-                console.log(result.devices);
             }
         } catch (error) {
             console.error('Unable to load Device Pulse monitored devices list:', error);
