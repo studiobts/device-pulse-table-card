@@ -92,7 +92,8 @@ class DevicePulseTableCard extends LitElement {
   }
   async _loadCSS() {
     try {
-      const response = await fetch("/local/device-pulse-table-card/device-pulse-table-card.css");
+      const cssUrl = new URL("./device-pulse-table-card.css", import.meta.url);
+      const response = await fetch(cssUrl);
       const css2 = await response.text();
       const style = document.createElement("style");
       style.textContent = css2;
@@ -109,7 +110,6 @@ class DevicePulseTableCard extends LitElement {
       if (result && result.devices) {
         this._initialized = true;
         this._devices = result.devices;
-        console.log(result.devices);
       }
     } catch (error) {
       console.error("Unable to load Device Pulse monitored devices list:", error);
