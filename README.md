@@ -1,5 +1,12 @@
 # Device Pulse Table Card
 
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
+
+If you want to make donation as appreciation of my work, you can do so via buy me a coffee. Thank you!
+
+<a href="https://buymeacoffee.com/studiobts" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"></a>
+
+
 ## README in Progress
 
 This README file is currently a work in progress.
