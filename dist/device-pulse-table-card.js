@@ -45,7 +45,12 @@ class DevicePulseTableCard extends LitElement {
   setConfig(config) {
     this._config = {
       title: config.title || "Monitored Network Devices",
-      ...config
+      ...config,
+      grid_options: {
+        rows: config.grid_options?.rows ?? "auto",
+        columns: config.grid_options?.columns ?? "auto",
+        ...config.grid_options
+      }
     };
     if (this._config.group_by_integration) {
       this._groupBy = "integration_name";
@@ -54,24 +59,6 @@ class DevicePulseTableCard extends LitElement {
   }
   getCardSize() {
     return 4;
-  }
-  getGridOptions() {
-    const HA_ROW_HEIGHT_PX = 56;
-    const HA_ROW_GAP_PX = 8;
-    const CARD_HEADER_HEIGHT = 90;
-    const TABLE_HEADER_HEIGHT = 50;
-    const DATA_ROW_HEIGHT = 44;
-    const totalHeightInPixels = CARD_HEADER_HEIGHT + TABLE_HEADER_HEIGHT + Object.values(this._devices).length * DATA_ROW_HEIGHT;
-    let rows = 0;
-    let height = 0;
-    while (height < totalHeightInPixels) {
-      rows = rows + 1;
-      height = rows * HA_ROW_HEIGHT_PX + (rows - 1) * HA_ROW_GAP_PX;
-    }
-    return {
-      rows,
-      min_rows: rows
-    };
   }
   disconnectedCallback() {
     if (this._unsubscribe?.length) {
