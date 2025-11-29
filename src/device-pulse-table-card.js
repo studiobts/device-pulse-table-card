@@ -317,7 +317,7 @@ class DevicePulseTableCard extends LitElement {
 
             let parts = [];
             if (days) {
-                parts.push(`${days}g`);
+                parts.push(`${days}d`);
             }
             const remainingHours = hours % 24;
             if (days || remainingHours) {
