@@ -80,7 +80,7 @@ class DevicePulseTableCard extends LitElement {
   }
   async _loadCSS() {
     try {
-      const cssUrl = new URL("./device-pulse-table-card.css", import.meta.url);
+      const cssUrl = new URL(`./device-pulse-table-card.css?v=${CARD_VERSION}`, import.meta.url);
       const response = await fetch(cssUrl);
       const css2 = await response.text();
       const style = document.createElement("style");
