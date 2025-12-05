@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "https://unpkg.com/lit@3.1.2/index.js?module";
 import { when } from "https://unpkg.com/lit@3.1.2/directives/when.js?module";
+const CARD_VERSION = "1.0.3";
 class DevicePulseTableCard extends LitElement {
   static properties = {
     _devices: { state: true },
@@ -496,3 +497,8 @@ window.customCards.push({
   preview: true,
   documentationURL: "https://github.com/studiobts/device-pulse-table-card"
 });
+console.info(
+  `%c DEVICE-PULSE-TABLE-CARD %c v${CARD_VERSION} `,
+  "background: #1976d2; color: white; font-weight: bold; padding: 2px 6px; border-radius: 4px 0 0 4px;",
+  "background: #ff7043; color: white; font-weight: bold; padding: 2px 6px; border-radius: 0 4px 4px 0;"
+);
