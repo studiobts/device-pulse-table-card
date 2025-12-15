@@ -1,7 +1,7 @@
 import { LitElement, html, css } from "https://unpkg.com/lit@3.1.2/index.js?module";
 import { when } from "https://unpkg.com/lit@3.1.2/directives/when.js?module";
 import { cardStyles } from "./device-pulse-table-card-style.js";
-const CARD_VERSION = "1.0.3";
+const CARD_VERSION = "1.0.4";
 class DevicePulseTableCard extends LitElement {
   static properties = {
     _devices: { state: true },
