@@ -76,6 +76,9 @@ td.ping_status {
     min-width: 30px;
     text-align: center;
 }
+td.host {
+    user-select: text;
+}
 .group-header {
     background: var(--secondary-background-color);
     font-weight: 500;
