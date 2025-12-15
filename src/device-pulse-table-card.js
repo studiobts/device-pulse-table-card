@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "https://unpkg.com/lit@3.1.2/index.js?module";
 import { when } from "https://unpkg.com/lit@3.1.2/directives/when.js?module";
+import { cardStyles } from './device-pulse-table-card-style.js';
 
 const CARD_VERSION = "1.0.3";
 
@@ -12,6 +13,8 @@ class DevicePulseTableCard extends LitElement {
         _showStatus: { type: String },
         _groupBy: { type: String },
     }
+
+    static styles = cardStyles;
 
     constructor() {
         super();
@@ -48,7 +51,7 @@ class DevicePulseTableCard extends LitElement {
     set hass(hass) {
         if (! this._hass) {
             this._hass = hass;
-            this._loadResources();
+            this._loadDevices();
             this._subscribeToEvents();
         }
     }
@@ -95,19 +98,6 @@ class DevicePulseTableCard extends LitElement {
         }
     }
 
-    async _loadCSS() {
-        try {
-            const cssUrl = new URL(`./device-pulse-table-card.css?v=${CARD_VERSION}`, import.meta.url);
-            const response = await fetch(cssUrl);
-            const css = await response.text();
-            const style = document.createElement('style');
-            style.textContent = css;
-            this.renderRoot.appendChild(style);
-        } catch (error) {
-            console.error('Unable to load card CSS file:', error);
-        }
-    }
-
     async _loadDevices() {
         try {
             const result = await this._hass.callWS({
@@ -120,11 +110,6 @@ class DevicePulseTableCard extends LitElement {
         } catch (error) {
             console.error('Unable to load Device Pulse monitored devices list:', error);
         }
-    }
-
-    async _loadResources() {
-        await this._loadCSS();
-        await this._loadDevices();
     }
 
     _handleStateChanged(event) {
