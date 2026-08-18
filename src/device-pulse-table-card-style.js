@@ -1,4 +1,4 @@
-import { css } from "https://unpkg.com/lit@3.1.2/index.js?module";
+import { css } from "lit";
 
 export const cardStyles = css`
     :host {

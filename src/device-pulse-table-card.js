@@ -1,5 +1,5 @@
-import { LitElement, html, css } from "https://unpkg.com/lit@3.1.2/index.js?module";
-import { when } from "https://unpkg.com/lit@3.1.2/directives/when.js?module";
+import { LitElement, html, css } from "lit";
+import { when } from "lit/directives/when.js";
 import { cardStyles } from './device-pulse-table-card-style.js';
 
 const CARD_VERSION = "1.1.0";
